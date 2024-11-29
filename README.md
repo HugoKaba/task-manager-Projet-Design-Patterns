@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# Collaborative Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+The **Collaborative Task Manager** is a task management application built using **Vite** and **React**. It allows users to add, delete, and toggle tasks while providing sorting functionalities based on task completion or alphabetical order. Additionally, it includes a notification system to alert users of important actions such as task addition, deletion, or completion toggling. The app also provides an **Undo Delete** feature to restore a recently deleted task.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is built with **design patterns** for better scalability and maintainability, specifically:
+- **Factory Pattern** for task creation.
+- **Strategy Pattern** for sorting tasks.
+- **Observer Pattern** for managing notifications.
 
-## Expanding the ESLint configuration
+The app uses **LocalStorage** for persisting tasks and notifications, ensuring data is retained even after page reloads or app closure.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Add Task**: Allows users to add a new task with a title and description.
+- **Delete Task**: Tasks can be deleted, with the option to undo the deletion.
+- **Toggle Task Completion**: Mark tasks as completed or incomplete.
+- **Sort Tasks**: Tasks can be sorted by:
+  - Completion Status (completed/incomplete)
+  - Alphabetically by title
+- **Undo Task Deletion**: After deleting a task, a button appears to undo the deletion and restore the task.
+- **Notifications**: Notifies users when tasks are added, deleted, or marked as completed/incomplete.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Technologies Used
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Vite**: A fast build tool that provides a lightning-fast development experience.
+- **React**: Frontend library for building the user interface.
+- **TypeScript**: Superset of JavaScript providing static types.
+- **LocalStorage**: Used for persisting tasks and notifications locally.
+- **CSS**: Styling for the app.
+- **Design Patterns**: The app uses several design patterns, such as:
+  - **Factory Pattern**: To create tasks.
+  - **Strategy Pattern**: To manage sorting tasks by different criteria.
+  - **Observer Pattern**: For the notification system.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/task-manager.git
+
+
+## Creator
+
+**Hugo Kaba**
